@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <div id="chart"></div>
+
+    <script src="/lib/gchart.loader.min.js"></script>
+    <script src="/lib/pegasus.min.js"></script>
+    <script>
+      var Config = <%= JSON.dump(params.to_hash) %>;
+    </script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
