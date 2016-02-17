@@ -1,3 +1,4 @@
+require "bundler/setup"
 require './tesouro-direto-crawler'
 require './tesouro-direto-to-redis'
 
