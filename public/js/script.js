@@ -43,10 +43,20 @@
       chart.draw(gData, {
         title: 'Titulos Públicos',
         hAxis: {
-          gridlines: {count: 24*60*60},
-          format: "MMM y"
+          gridlines: {
+            count: -1,
+            units: {
+              years: {format: "y"}
+            }
+          },
+          minorGridlines: {
+            units: {
+              days: {format: "MMM y"}
+            }
+          },
+          //format: "MMM y"
         },
-        vAxis: {format: "#,###%"},
+        vAxis: {format: "#,##%"},
         legend: { position: 'right' },
         width: 1300,
         height: 640
@@ -103,39 +113,6 @@
       }
 
       return [headers].concat(data);
-    }
-
-    var COLORS = [
-      "rgb(0,255,0)", 
-      "rgb(50,255,0)",
-      "rgb(100,255,0)",
-      "rgb(150,255,0)",
-      "rgb(200,255,0)",
-
-      "rgb(255,255,0)",
-      "rgb(255,200,0)",
-      "rgb(255,150,0)",
-      "rgb(255,100,0)",
-      "rgb(255,50,0)",
-
-      "rgb(255,0,0)",
-      "rgb(255,0,50)",
-      "rgb(255,0,100)",
-      "rgb(255,0,150)",
-      "rgb(255,0,200)",
-
-      "rgb(255,0,255)",
-      "rgb(200,0,255)",
-      "rgb(150,0,255)",
-      "rgb(100,0,255)",
-      "rgb(50,0,255)",
-      "rgb(0,0,255)"
-     ];
-    var colorInx = 0;
-    function newColor() {
-      var color = COLORS[colorInx];
-      colorInx = (colorInx + 1) % COLORS.length;
-      return color;
     }
 
     function asKey(date) {
