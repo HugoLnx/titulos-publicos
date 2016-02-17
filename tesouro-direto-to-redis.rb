@@ -47,7 +47,7 @@ class SpreadsheetToDatabase
   ATTRS_NAMES = %i{buy_tax sell_tax buy_PU sell_PU base_PU}
 
   def initialize
-    @redis = Redis.new
+    @redis = Redis.new url: ENV["REDISTOGO_URL"]
     @dao = FinancesDAO.new(@redis)
   end
 
